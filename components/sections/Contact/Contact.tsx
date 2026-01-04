@@ -7,20 +7,20 @@ export function Contact() {
   return (
     <Section id="contato">
       <div className="p-2">
-      <p className="text-xs font-bold my-2 text-white">
+      <p className="text-xs font-bold my-2 text-white md:text-xs lg:text-xl text-base text-center">
         Entre em contato para agendar uma limpeza ou solicitar um orçamento.
       </p>
 
       <div className="flex justify-center gap-6">
 
-        <div  className="flex justify-center items-center gap-2">
+        <div  className="flex justify-center items-center gap-2 md:gap-4">
             <Link href="/" aria-label="Página inicial">
       <Image
         src="/images/facebook.png"
         alt="Logo Vinicius Mariano"
         width={20}
         height={20}
-        className="rounded-full"
+        className="rounded-full md:w-10 md:h-10"
       />
     </Link>
 
@@ -30,7 +30,7 @@ export function Contact() {
         alt="Logo Vinicius Mariano"
         width={20}
         height={20}
-        className="rounded-full"
+        className="rounded-full md:w-10 md:h-10"
       />
     </Link>
 
@@ -40,7 +40,7 @@ export function Contact() {
         alt="Logo Vinicius Mariano"
         width={20}
         height={20}
-        className="rounded-full"
+        className="rounded-full md:w-10 md:h-10"
       />
     </Link>
 
