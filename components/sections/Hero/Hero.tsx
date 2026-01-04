@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-type Plan = "Plano Diário" | "Plano Semanal" | "Plano Mensal";
+type Plan = "Plano Essencial" | "Plano Completo" | "Plano Pós-Obra" | "Plano Faxina personalizada";
 
 const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
 
@@ -48,12 +48,13 @@ export default function Hero() {
           Escolha o plano ideal para sua rotina
         </h1>
 
-        <div className="flex flex-col xl:flex-row gap-6 px-2 sm:px-6 xl:px-0">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 px-2 sm:px-6 xl:px-0">
+
           {/* ESSENCIAL */}
           <div
-            className={cardClasses("Plano Diário")}
+            className={cardClasses("Plano Essencial")}
             onClick={() =>
-              setActivePlan(isOpen("Plano Diário") ? null : "Plano Diário")
+              setActivePlan(isOpen("Plano Essencial") ? null : "Plano Essencial")
             }
           >
             <div className="p-6 flex flex-col gap-4 text-center">
@@ -61,7 +62,7 @@ export default function Hero() {
               <p>Indicado para:</p>
               <p>Manutenção básica e limpeza recorrentes</p>
 
-              <div className={contentClasses("Plano Diário")}>
+              <div className={contentClasses("Plano Essencial")}>
                 <div className="text-left mt-6 space-y-4">
                   <h3 className="font-semibold">INCLUI:</h3>
                   <ul className="list-disc pl-6 space-y-1 text-sm">
@@ -90,7 +91,7 @@ export default function Hero() {
               <p className="text-sm text-gray-500">a partir</p>
               <p className="text-3xl font-bold mb-4">R$ 250</p>
               <button
-                onClick={() => handleWhatsApp("Plano Diário")}
+                onClick={() => handleWhatsApp("Plano Essencial")}
                 className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition"
               >
                 Agendar agora
@@ -100,9 +101,9 @@ export default function Hero() {
 
           {/* COMPLETO */}
           <div
-            className={cardClasses("Plano Semanal")}
+            className={cardClasses("Plano Completo")}
             onClick={() =>
-              setActivePlan(isOpen("Plano Semanal") ? null : "Plano Semanal")
+              setActivePlan(isOpen("Plano Completo") ? null : "Plano Completo")
             }
           >
             <div className="p-6 flex flex-col gap-4 text-center">
@@ -110,7 +111,7 @@ export default function Hero() {
               <p>Indicado para:</p>
               <p>Manutenção básica e limpeza recorrentes</p>
 
-              <div className={contentClasses("Plano Semanal")}>
+              <div className={contentClasses("Plano Completo")}>
                 <div className="text-left mt-6 space-y-4">
                   <h3 className="font-semibold">INCLUI:</h3>
                   <ul className="list-disc pl-6 space-y-1 text-sm">
@@ -139,7 +140,7 @@ export default function Hero() {
               <p className="text-sm text-gray-500">a partir</p>
               <p className="text-3xl font-bold mb-4">R$ 300</p>
               <button
-                onClick={() => handleWhatsApp("Plano Semanal")}
+                onClick={() => handleWhatsApp("Plano Completo")}
                 className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition"
               >
                 Agendar agora
@@ -149,9 +150,9 @@ export default function Hero() {
 
           {/* PÓS-OBRA */}
           <div
-            className={cardClasses("Plano Mensal")}
+            className={cardClasses("Plano Pós-Obra")}
             onClick={() =>
-              setActivePlan(isOpen("Plano Mensal") ? null : "Plano Mensal")
+              setActivePlan(isOpen("Plano Pós-Obra") ? null : "Plano Pós-Obra")
             }
           >
             <div className="p-6 flex flex-col gap-4 text-center">
@@ -162,7 +163,7 @@ export default function Hero() {
 
                   </div>
 
-              <div className={contentClasses("Plano Mensal")}>
+              <div className={contentClasses("Plano Pós-Obra")}>
                 <div className="text-left mt-2 space-y-4">
                   
                   <h3 className="font-semibold">INCLUI:</h3>
@@ -191,12 +192,73 @@ export default function Hero() {
             <div className="mt-auto p-6 text-center">
               <p className="text-3xl font-bold mb-4">Orçamento</p>
               <button
-                onClick={() => handleWhatsApp("Plano Mensal")}
+                onClick={() => handleWhatsApp("Plano Faxina personalizada")}
                 className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition"
               >
                 Agendar agora
               </button>
             </div>
+          </div>
+            {/* PÓS-OBRA */}
+          <div
+            className={cardClasses("Plano Faxina personalizada")}
+            onClick={() =>
+              setActivePlan(isOpen("Plano Faxina personalizada") ? null : "Plano Faxina personalizada")
+            }
+          >
+            <div className="p-6 flex flex-col gap-4 text-center">
+              <h2 className="text-xl font-semibold">FAXINA PERSONALIZADA</h2>
+              <div className="text-center">
+                    <p className="mb-4">Indicado para:</p>
+                  <p>Necessidades específicas do cliente</p>
+
+                  </div>
+
+              <div className={contentClasses("Plano Faxina personalizada")}>
+                <div className="text-left mt-2 space-y-4">
+                  
+                  <h3 className="font-semibold">O cliente escolhe quais áreas deseja priorizar, por exemplo:</h3>
+
+                  <ul className="list-disc pl-6 space-y-1 text-sm">
+                    <li>Banheiros</li>
+                    <li>Cozinha</li>
+                    <li>Janelas</li>
+                    <li>Portas</li>
+                    <li>Área de serviço</li>
+                  </ul>
+
+                  <p>Tempo médio: Definido conforme demanda</p>
+
+                  <h3 className="font-semibold">OBSERVAÇÕES GERAIS:</h3>
+                  <ul className="list-disc pl-6 space-y-1 text-sm">
+                    <li>
+                      Valores podem variar conforme tamanho do imóvel e nível de sujeira
+                    </li>
+                    <li>
+                      Serviços adicionais devem ser combinados previamente
+                    </li>
+                    <li>
+                      Para clientes novos, pode ser aplicada taxa de reserva de agenda
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-auto p-6 text-center">
+              <p className="text-xl font-bold mb-4">
+                Calculado por hora ou por escopo.
+              </p>
+              <button
+                onClick={() => handleWhatsApp("Plano Faxina personalizada")}
+                className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition"
+              >
+                Agendar agora
+              </button>
+            </div>
+          </div>
+          <div>
+
           </div>
         </div>
       </div>
